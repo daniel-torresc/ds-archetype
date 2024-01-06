@@ -1,0 +1,45 @@
+master: yarn
+
+default:
+  spark.jars: # TODO
+  spark.hadoop.hive.exec.dynamic.partition: true
+  spark.hadoop.hive.exec.dynamic.partition.mode: nonstrict
+  spark.hadoop.hive.exec.max.dynamic.partitions: 100000
+  spark.hadoop.hive.exec.max.dynamic.partitions.pernode: 100000
+  spark.sql.legacy.allowCreatingManagedTableUsingNonemptyLocation: true
+  spark.sql.session.timeZone: Europe/Madrid
+  spark.sql•sources.partitionOverwriteMode: dynamic
+  spark.sql.broadcastTimeout: 36000
+  spark.driver.allowMultipleContexts: true
+  spark.driver.maxResultSize: 0
+  spark.dynamicAllocation.enabled: false
+  spark.ui.showConsoleProgress: false
+
+resources:
+  minimal:
+    spark.driver.cores: 1
+    spark.driver.memory: 8G
+    spark.executor.instances: 1
+    spark.executor.cores: 2
+    spark.executor.memory: 46
+
+  small:
+    spark.driver.cores: 1
+    spark.driver.memory: 8G
+    spark.executor.instances: 1
+    spark.executor.cores: 6
+    spark.executor.memory: 8G
+
+  medium:
+    spark.driver.cores: 1
+    spark.driver.memory: 8G
+    spark.executor.instances: 1
+    spark.executor.cores: 6
+    spark.executor.memory: 8G
+
+  large:
+    spark.driver.cores: 1
+    spark.driver.memory: 8G
+    spark.executor.instances: 1
+    spark.executor.cores: 6
+    spark.executor.memory: 8G
